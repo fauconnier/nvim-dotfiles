@@ -1,0 +1,8 @@
+Execute (Assert b:vimtex.tex = latexmain.tex):
+  call system('touch latexmain.tex')
+  call system('touch latexmain.tex.latexmain')
+  new test.tex
+  AssertEqual 'latexmain.tex', fnamemodify(b:vimtex.tex, ':t')
+  bdelete!
+  call system('rm latexmain.tex*')
+

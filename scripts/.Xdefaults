@@ -1,0 +1,18 @@
+XTerm*faceName: Bitstream Vera Serif Mono
+XTerm*vt100*geometry: 185x650
+XTerm*saveLines: 16384
+XTerm*loginShell: true
+XTerm*charClass: 33:48,35:48,37:48,43:48,45-47:48,64:48,95:48,126:48
+XTerm*termName: xterm-color
+XTerm*eightBitInput: false
+*VT100.Translations: #override Ctrl <Btn4Down>: larger-vt-font() \n\
+Ctrl <Btn5Down>: smaller-vt-font() \n\
+Ctrl <Key>=: larger-vt-font() \n\
+Ctrl <Key>-: smaller-vt-font()
+XTerm*faceSize: 11
+XTerm*faceSize1:   9
+XTerm*faceSize2:    10
+XTerm*faceSize3:    11
+XTerm*faceSize4:    12
+XTerm*faceSize5:    13
+XTerm*faceSize6:    15

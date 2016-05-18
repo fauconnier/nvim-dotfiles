@@ -1,0 +1,46 @@
+Execute (Setup):
+  set textwidth=79
+  let g:vimtex_format_enabled = 1
+  silent! VimtexReload
+
+Given tex (Format: Inline comment):
+  Lorem ipsum dolor sit amet, consetetur sadipscing % a comment
+  elitr, sed diam
+  nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat,
+  sed diam voluptua. At vero eos et accusam et justo duo dolores et ea
+  rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem
+  ipsum dolor sit amet.
+
+Do (Format text):
+  gqG
+
+Expect tex (Verify):
+  Lorem ipsum dolor sit amet, consetetur sadipscing % a comment
+  elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna
+  aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores
+  et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum
+  dolor sit amet.
+
+Given tex (Format: Line breaking):
+  start a new paragraph \\
+  start a new line but not a new paragraph \\*
+  flush all, start a new (odd numbered) page \cleardoublepage
+  flush all, start a new page \clearpage
+  allow to break the line here \linebreak
+  request a new line \newline
+  request a new page \newpage
+  encourage page break \pagebreak
+
+Do (TODO Format text):
+  gqG
+
+Expect tex (Verify):
+  start a new paragraph \\
+  start a new line but not a new paragraph \\*
+  flush all, start a new (odd numbered) page \cleardoublepage
+  flush all, start a new page \clearpage
+  allow to break the line here \linebreak
+  request a new line \newline
+  request a new page \newpage
+  encourage page break \pagebreak
+

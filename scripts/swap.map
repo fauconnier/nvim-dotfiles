@@ -1,0 +1,5 @@
+keymaps 0-127
+keycode 58 = Escape
+keycode 1 = Escape
+keycode 69 = Num_Lock
+keycode 70 = Scroll_Lock
