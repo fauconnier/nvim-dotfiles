@@ -150,7 +150,6 @@ let g:languagetool_jar='/home/jfaucon/Program/LanguageTool/LanguageTool-2.7/lang
 let g:languagetool_lang='fr'
 let g:languagetool_disable_rules='WHITESPACE_RULE,EN_QUOTES,FRENCH_WHITESPACE'
 
-
 " Swap to word
 nmap <silent> gw "_yiw:s/\(\%#[azertyuiopqsdfghjklmwxcvbnAZERTYUIOPQSDFGHJKLMWXCVBNéèàÉÈÀ1234567890_-]\+\)\( et \\|\_W\+\)\([azertyuiopqsdfghjklmwxcvbnAZERTYUIOPQSDFGHJKLMWXCVBNéèàÉÈÀ1234567890_-]\+\)/\3\2\1/<CR><C-o>:noh<CR>
 noh
@@ -233,6 +232,12 @@ if exists('#auto_highlight')
 endfunction
 
 
+"-----------------------------------------------------------------------------
+" Latex
+"-----------------------------------------------------------------------------
+
+let g:vimtex_fold_enabled=0
+let g:latex_fold_automatic=0
 
 "-----------------------------------------------------------------------------
 " Status line

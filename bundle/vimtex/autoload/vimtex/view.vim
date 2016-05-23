@@ -89,7 +89,6 @@ function! s:general.init() dict " {{{2
   "
   " Set default options
   "
-
   call vimtex#util#set_default_os_specific('g:vimtex_view_general_viewer',
         \ {
         \   'linux' : 'xdg-open',
