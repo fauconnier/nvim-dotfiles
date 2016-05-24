@@ -289,7 +289,7 @@ endfunction
 
 function! ExecLine()
     let mycmd = getline('.')
-    echo "Exec" . mycmd
+    "echo "Exec" . mycmd
     if(mycmd != "")
         call neoterm#do(mycmd)
         silent!  execute "normal! /^\\S\<cr>"
