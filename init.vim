@@ -50,7 +50,7 @@ au BufRead /tmp/mutt-* set tw=72
 let g:calendar_google_calendar = 1
 let g:calendar_google_task = 1
 let g:calendar_time_zone = "+0200"
-
+let g:calendar_first_day = "monday"
 
 "-----------------------------------------------------------------------------
 " Keyboard
@@ -132,7 +132,6 @@ nmap gB :bp<CR>
 map <2-leftmouse> <Leader>m
 
 " Escape terminal with espace
-tnoremap <Esc> <C-\><C-n>
 tnoremap <leader>< <C-\><C-n>
 
 
