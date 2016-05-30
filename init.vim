@@ -144,6 +144,9 @@ noremap <Leader>w :w !sudo tee % > /dev/null<cR>
 " reverse text
 vnoremap ;rv c<C-O>:set revins<CR><C-R>"<Esc>:set norevins<CR>
 
+" NerdTree
+map <F5> :NERDTreeToggle<CR>
+
 "Language Tool
 let g:languagetool_jar='/home/jfaucon/Program/LanguageTool/LanguageTool-2.7/languagetool-commandline.jar'
 let g:languagetool_lang='fr'
@@ -297,38 +300,3 @@ function! ExecLine()
     endif
 endfunction
 
-
-" -- DEPRECATED --
-" Swith from simpe dump of shell to interactive shell with Neoterm
-" See above
-"let g:shellsize = 0
-"let g:shelllinenumber = 0
-
-"command! -complete=shellcmd -nargs=+ Shell call s:ExecuteInShell(<q-args>)
-"function! s:ExecuteInShell(command)
-    "let command = join(map(split(a:command), 'expand(v:val)'))
-    "let winnr = bufwinnr('^' . command . '$')
-    "silent! execute  winnr < 0 ? 'botright new ' . fnameescape(command) : winnr . 'wincmd w'
-    "setlocal buftype=nowrite bufhidden=wipe nobuflisted noswapfile wrap number
-    "set colorcolumn =
-    "echo 'Execute ' . command . '...'
-    "silent! execute 'silent %!'. command
-    "if !g:shellsize
-      "execute "silent! resize 10"
-    "else
-      "execute "silent! resize " .g:shellsize
-    "endif
-    "silent! execute 'au BufUnload <buffer> execute bufwinnr(' . bufnr('#') . ') . ''wincmd w'''
-    "silent! execute 'nnoremap <silent> <buffer> <LocalLeader>r :call <SID>ExecuteInShell(''' . command . ''')<CR>'
-    "echo 'Shell command ' . command . ' executed.'
-    "if !g:shelllinenumber
-        "normal GG
-    "else
-        "execute ":" .g:shelllinenumber
-        "normal zt
-    "endif
-    "silent! redraw
-    "execute "normal! \<C-W>\<C-P>"
-"endfunction
-"map <F1> :execute "let g:shelllinenumber=" . ( line(".") )<cr>
-"map <F2> :execute "let g:shelllinenumber=0"<cr>
