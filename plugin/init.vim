@@ -1,8 +1,8 @@
 set nocompatible
 
 " Pathogen
-execute pathogen#infect()
-Helptags
+"execute pathogen#infect()
+"Helptags
 
 " Share clipboard
 set clipboard=unnamed
@@ -282,11 +282,13 @@ nmap <Space> <Plug>RDSendLine
 let g:neoterm_repl_command = "clear"
 let g:neoterm_size = 10
 
+nnoremap <silent> ,th :call neoterm#close()<cr>
+nnoremap <silent> ,tk :call neoterm#kill()<cr>
+nnoremap <silent> ,tc :call neoterm#clear()<cr>
 
-" vimtex
-let g:vimtex_view_general_viewer = 'okular'
-let g:vimtex_view_general_options = '--unique @pdf\#src:@line@tex'
-let g:vimtex_view_general_options_latexmk = '--unique'
+function! ExecFile(mycmd)
+    call neoterm#do(a:mycmd)
+endfunction
 
 function! ExecLine()
     let mycmd = getline('.')
@@ -297,12 +299,5 @@ function! ExecLine()
     else
         silent!  execute "normal! /^\\S\<cr>"
     endif
-endfunction
-
-nmap <C-t> :call ExecLatex()<cr>
-function! ExecLatex()
-    call neoterm#do('X')
-    call neoterm#clear()
-    call neoterm#do('latexmk -pdflatex="lualatex -synctex=1" -pdf ' . '%')
 endfunction
 

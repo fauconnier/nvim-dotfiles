@@ -2,10 +2,11 @@
 # %FFILE%
 # %USER%, %FDATE%
 #
+CC=g++
+CFLAGS=-c -Wall
 
-all:
-	%HERE%@echo "%FFILE% needs your attention"
+all: main.o
+	$(CC) $(CFLAGS) main.cpp -o main.o
 
-
-# vim:ft=make
-#
+clean:
+	rm *.o
