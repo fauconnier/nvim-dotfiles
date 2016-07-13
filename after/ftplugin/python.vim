@@ -30,6 +30,7 @@ endfunction
 
 function! Execfile()
     let b:file = expand('%')
-    call neoterm#do("execfile('". b:file ."')")
+    call neoterm#do("run '". b:file ."'")
+    "call neoterm#do("execfile('". b:file ."')")
 endfunction
 

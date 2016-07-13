@@ -9,6 +9,6 @@ let g:ycm_confirm_extra_conf=0
 " Tlsit
 nmap <silent><buffer> <localleader>lt :Tlist<CR>
 
-" Execute on the fly
-nmap <C-q> :call ExecFile("g++ % -o " . expand('%:r') . ".o && ./" . expand('%:r') . ".o")<cr>
-nmap <C-t> :call ExecFile("make && ./main.o")<cr>
+nmap <C-q> :call neoterm#do("g++ % -o " . expand('%:r') . ".o && ./" . expand('%:r') . ".o")<cr>
+nmap <C-t> :call neoterm#do("make && ./main.o")<cr>
+

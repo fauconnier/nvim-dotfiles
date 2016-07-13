@@ -34,7 +34,7 @@ set noincsearch
 set hlsearch
 set ruler
 
-set spelllang=fr
+set spelllang=en
 set lbr
 set timeout timeoutlen=1000 ttimeoutlen=10
 
@@ -299,7 +299,7 @@ function! ExecLine()
     endif
 endfunction
 
-nmap <C-t> :call ExecLatex()<cr>
+"nmap <C-t> :call ExecLatex()<cr>
 function! ExecLatex()
     call neoterm#do('X')
     call neoterm#clear()
